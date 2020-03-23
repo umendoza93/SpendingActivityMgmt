@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button btnPlus,btnMinus,btnClr;
-    EditText dateLine,amtLine,infoLine,noteContent;
-    TextView blnLine;
+    EditText dateLine,amtLine,infoLine;
+    TextView blnLine,noteContent;
     SharedPreferences sh;
 
     @Override
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         btnClr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                noteContent.getText().clear();
+                noteContent.setText("");
                 blnLine.setText("Current Balance: $0.00");
                 SharedPreferences.Editor editor = sh.edit();
                 editor.remove("note");
